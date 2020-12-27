@@ -50,3 +50,6 @@ Route::get('hello/{msg?}', function ($msg = '') {
 
     return $html;
 });
+
+
+Route::get('sunyou', 'HelloController@index');
