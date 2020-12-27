@@ -41,7 +41,7 @@ Route::get('hello/{msg?}', function ($msg = '') {
         </style>
     </head>
     <body>
-        <h1>hello</h1>
+        <h1>hello sunyou</h1>
         <p>{$msg}</p>
         <p>sample page</p>
     </body>
