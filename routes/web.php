@@ -11,10 +11,23 @@
 |
 */
 
+$html = <<<EOF
+<html>
+<body>
+eof_test
+</body>
+</html>
+EOF;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tt', function () {
+Route::get('tt', function () {
     return view('tt');
+});
+
+Route::get('direct', function () use ($html) {
+    return $html;
 });
