@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HelloController extends Controller
 {
     //
-    public function index()
+    public function index($id = 'no id', $pass = 'unknown')
     {
         return <<<EOF
         <html>
@@ -21,6 +21,10 @@ class HelloController extends Controller
         <body>
             <h1>hello</h1>
             <p>sample page</p>
+            <ul>
+                <li>ID:{$id}</li>
+                <li>PASS:{$pass}</li>
+            </ul>
         </body>
         </html>
         EOF;

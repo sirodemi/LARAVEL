@@ -52,4 +52,4 @@ Route::get('hello/{msg?}', function ($msg = '') {
 });
 
 
-Route::get('sunyou', 'HelloController@index');
+Route::get('sunyou/{id?}/{pass?}', 'HelloController@index');
