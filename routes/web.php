@@ -30,7 +30,7 @@ Route::get('direct', function () use ($html) {
 });
 
 
-Route::get('hello/{msg}', function ($msg) {
+Route::get('hello/{msg?}', function ($msg = '') {
     $html = <<<EOF
     <html>
     <head>
