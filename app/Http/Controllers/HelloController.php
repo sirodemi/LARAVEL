@@ -19,11 +19,10 @@ class HelloController extends Controller
     }
 */
 
-    public function index(Request $request)
+    public function index()
     {
         $data = [
-            'msg' => 'コントローラーからのメッセージ',
-            'id' => $request->id
+            'msg' => 'bladeを利用したメッセージ'
         ];
         return view('hello.index', $data);
     }
