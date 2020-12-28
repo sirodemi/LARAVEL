@@ -18,8 +18,12 @@
         </head>
 
         <body>
-            <h1>Hello</h1>
-            <p>sample page</p>
+            <h1>Index</h1>
+            <p><?php echo $msg; ?></p>
+            <p>ID=<?php echo $id; ?></p>
+            <!-- <p><?php echo $msg2; ?></p> -->
+            <!-- <p><?php echo date("Y年n月j日"); ?></p> -->
+            <!-- <p>make [sample page] with controller on the template </p> -->
         </body>
 
         </html>
