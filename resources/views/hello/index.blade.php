@@ -1,4 +1,22 @@
-<html>
+@extends('layouts.helloapp')
+@section('title','SUNYOU Index')
+
+@section('menubar')
+@parent
+インデックスページ
+@endsection
+
+@section('content')
+<p>ここが本文のコンテンツです</p>
+<p>必要なだけ記述できます</p>
+@endsection
+
+@section('footer')
+copyright 2020 Shiro
+@endsection
+
+
+{{-- <html>
 <head>
     <title>Hello Shiro!</title>
     <style>
@@ -51,4 +69,4 @@
         @endwhile
     </ol>
 </body>
-</html>
+</html> --}}

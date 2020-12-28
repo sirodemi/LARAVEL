@@ -23,7 +23,7 @@
             @yield('content')
         </div>
         <div class="footer">
-            @yieldl('footer')
+            @yield('footer')
         </div>
     </body>
 </html>
