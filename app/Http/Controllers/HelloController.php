@@ -12,16 +12,39 @@ class HelloController extends Controller
     {
         // $items = DB::select('select * from people');
 
-        $items = DB::table('people')->get();
+        $items = DB::table('people')
+            ->orderBy('age', 'desc')
+            ->get();
         return view('hello.index', ['items' => $items]);
     }
 
 
     public function show(Request $request)
     {
-        $id = $request->id;
-        $item = DB::table('people')->where('id', $id)->first();
-        return view('hello.show', ['item' => $item]);
+        $min = $request->min;
+        $max = $request->max;
+        $items = DB::table('people')
+            ->whereRaw('age >= ? and age <= ?', [$min, $max])
+            ->get();
+        return view('hello.show', ['items' => $items]);
+
+
+        // $name = $request->name;
+        // $items = DB::table('people')
+        //     ->where('name', 'like', '%' . $name . '%')
+        //     ->orWhere('mail', 'like', '%' . $name . '%')
+        //     ->get();
+        // return view('hello.show', ['items' => $items]);
+
+
+        // $id = $request->id;
+        // $items = DB::table('people')
+        //     ->where('id', '<=', $id)
+        //     ->get();
+        // return view('hello.show', ['items' => $items]);
+
+        // $item = DB::table('people')->where('id', $id)->first();
+        // return view('hello.show', ['item' => $item]);
     }
 
 
