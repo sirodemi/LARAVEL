@@ -4,25 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('hello.index', ['message' => 'Hello!']);
-
-        // $data = [
-        //     ['name' => 'yamada', 'mail' => 'yyy@'],
-        //     ['name' => 'ibi', 'mail' => 'iii@'],
-        //     ['name' => 'shiro', 'mail' => 'sss@'],
-        // ];
-        // return view('hello.index', ['data' => $data]);
-
-
-        // return ('77');
-        // $data = ['one', 'two', 'three', 'four', 'five'];
-        // return ($data);
-        // return view('hello.index', ['data' => $data]);
-        // return view('hello.index');
+        $items = DB::select('select * from people');
+        return view('hello.index', ['items' => $items]);
     }
 }
