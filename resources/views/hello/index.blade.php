@@ -8,9 +8,13 @@
 
 @section('content')
     <p>ここが本文のコンテンツです</p>
-    <ul>
+    <p>Controller value<br>'message'={{$message}}</p>
+    <p>ViewComposer value<br>'view_message'={{$view_message}}</p>
+
+    {{-- <ul>
         @each('components.item',$data,'item')
-    </ul>
+    </ul> --}}
+
     {{-- <p>必要なだけ記述できます</p> --}}
     {{-- @include('components.message',['msg_title'=>'ok','msg_content'=>'サブビューです']) --}}
     {{-- @component('components.message')
