@@ -12,7 +12,7 @@ class HelloController extends Controller
     {
         // $items = DB::select('select * from people');
 
-        $items = DB::table('people')
+        $items = DB::table('people1')
             ->orderBy('age', 'desc')
             ->get();
         return view('hello.index', ['items' => $items]);
@@ -23,7 +23,7 @@ class HelloController extends Controller
     {
         $min = $request->min;
         $max = $request->max;
-        $items = DB::table('people')
+        $items = DB::table('people1')
             ->whereRaw('age >= ? and age <= ?', [$min, $max])
             ->get();
         return view('hello.show', ['items' => $items]);
@@ -50,7 +50,7 @@ class HelloController extends Controller
 
     public function post(Request $request)
     {
-        $items = DB::select('select * from people');
+        $items = DB::select('select * from people1');
         return view('hello.index', ['items' => $items]);
     }
 
@@ -69,14 +69,14 @@ class HelloController extends Controller
             'age' => $request->age,
         ];
 
-        DB::table('people')->insert($param);
+        DB::table('people1')->insert($param);
         // DB::insert('insert into people (name,mail,age) values (:name, :mail,:age)', $param);
         return redirect('/hello');
     }
 
     public function edit(Request $request)
     {
-        $item = DB::table('people')
+        $item = DB::table('people1')
             ->where('id', $request->id)->first();
         return view('hello.edit', ['form' => $item]);
         // $param = ['id' => $request->id];
@@ -92,7 +92,7 @@ class HelloController extends Controller
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::table('people')
+        DB::table('people1')
             ->where('id', $request->id)
             ->update($param);
 
@@ -110,7 +110,7 @@ class HelloController extends Controller
 
     public function del(Request $request)
     {
-        $item = DB::table('people')
+        $item = DB::table('people1')
             ->where('id', $request->id)->first();
         return view('hello.del', ['form' => $item]);
 
@@ -122,7 +122,7 @@ class HelloController extends Controller
 
     public function remove(Request $request)
     {
-        DB::table('people')
+        DB::table('people1')
             ->where('id', $request->id)->delete();
         return redirect('/hello');
 
